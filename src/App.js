@@ -62,8 +62,8 @@ function App() {
 
               <div className="npmpackage">
                 <a href="https://www.npmjs.com/package/prism-animation">
-                  <img src='https://img.shields.io/npm/v/prism-animation.svg' height='auto' width='auto' />
-                  <img src='https://img.shields.io/badge/code_style-standard-brightgreen.svg' height='auto' width='auto' />
+                  <img alt="" src='https://img.shields.io/npm/v/prism-animation.svg' height='auto' width='auto' />
+                  <img alt="" src='https://img.shields.io/badge/code_style-standard-brightgreen.svg' height='auto' width='auto' />
                 </a>
               </div>
 
