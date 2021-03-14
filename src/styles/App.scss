@@ -1,0 +1,217 @@
+@import "./varibles.scss";
+@import "./breakpoints.scss";
+
+body,
+html {
+  visibility: visible; // Toggle debug animations
+  user-select: none;
+  background: white;
+  overscroll-behavior: none;
+  margin: 0;
+  font-family: "Karla", -apple-system, BlinkMacSystemFont, "Segoe UI",
+    "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans",
+    "Helvetica Neue", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.container {
+  width: 1280px;
+  min-width: 1280px;
+  margin: 0 auto;
+  height: 100%;
+  position: relative;
+  @include media("<=1560px") {
+    width: 1280px;
+    min-width: 1280px;
+  }
+  @include media("<=desktop") {
+    width: 1080px;
+    min-width: 1080px;
+  }
+  @include media("<=1080px") {
+    width: 100%;
+    min-width: 100%;
+  }
+  .row {
+    display: flex;
+    height: 100%;
+    padding: 0 32px;
+    @include media("<=phone") {
+      padding: 0 16px;
+    }
+  }
+  .v-center {
+    align-items: center;
+  }
+  .space-between {
+    justify-content: space-between;
+  }
+}
+
+.container-fluid {
+  width: 100%;
+  height: 100%;
+  .row {
+    display: flex;
+    height: 100%;
+  }
+}
+
+.code-highlighter {
+  border: 1px solid #EBA74A;
+  background: rgb(250, 250, 250);
+  pre {
+    margin: 0;
+  }
+}
+
+.App {
+  z-index: 2;
+  transform: translateY(0);
+  position: relative;
+  min-height: 100vh;
+}
+
+.action {
+  padding-top: 40px;
+  padding-bottom: 80px;
+  a {
+      align-items: center;
+      text-decoration: none;
+      color: #EBA74A;
+      font-weight: 400;
+      position: relative;
+      svg {
+          stroke: #EBA74A;
+          margin-left: 0.5rem;
+          height: 1.1rem;
+          transition: opacity 0.3s ease-out;
+          stroke-width: .5px;
+      }
+      &::after {
+          top: 24px;
+          bottom: 0;
+          content: "";
+          display: block;
+          height: 2px;
+          left: 0;
+          position: absolute;
+          background: #EBA74A;
+          transition: width 0.3s ease 0s, left 0.3s ease 0s;
+          width: 0;
+      }
+      &:hover {
+          &::after {
+              width: 100%;
+          }
+      }
+  }
+}
+
+footer {
+  padding: 40px;
+  text-align: center;
+  background-color:#EBA74A;
+  position: relative;
+  a {
+    position: relative;
+    text-decoration: none;
+    h4 {
+      &::after {
+        top: 24px;
+        bottom: 0;
+        content: "";
+        display: block;
+        height: 2px;
+        left: 0;
+        position: absolute;
+        background: black;
+        transition: width 0.3s ease 0s, left 0.3s ease 0s;
+        width: 0;
+    }
+    &:hover {
+        &::after {
+            width: 100%;
+        }
+    }
+      font-weight: 400;
+      color: white;
+    }
+
+    
+  }
+
+}
+
+// page styles
+.doc {
+  margin-top: 64px;
+  display: flex;
+  align-items: flex-start;
+  width: 100%;
+  top: 0;
+  .left {
+    
+    height: 100%;
+    border-radius: 18px;
+    padding: 24px;
+    margin: 0 32px;
+    flex: 30%;
+    background-color: #F8F8F8;
+    font-weight: 500;
+    font-size: 16px;
+    //border-left: 2px solid #EBA74A;
+  }
+  .right {
+    margin: auto 32px;
+    flex: 70%;
+    .header {
+      margin-bottom: 84px;
+      h1 {
+        font-size: 36px;
+        font-weight: 700;
+        color: #EBA74A;
+        font-style: italic;
+      }
+      p {
+        color: #202025;
+        font-size: 18px;
+        line-height: 1.5;
+      }
+    }
+
+    .npmpackage {
+      img {
+        margin-right: 16px;
+      }
+    }
+    
+    .content {
+      section {
+        margin-bottom: 140px;
+        h2 {
+          font-size: 32px;
+          color: #393939;
+          line-height: 36px;
+          font-style: italic;
+        }
+        p {
+          margin: 30px 0;
+          color: #9A9A9A;
+          font-size: 20px;
+          line-height: 32px;
+          code {
+              font-size: 1.1rem;
+              padding: .7rem;
+              font-weight: 700;
+              background: rgb(250, 250, 250);
+            
+          }
+        }
+
+      }
+    }
+  }
+}
+
